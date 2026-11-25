@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cash Me If You Can</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="nav-container">
+      <div class="nav-brand">Cash Me If You Can</div>
+
+      <nav class="nav-links">
+        <button class="nav-btn active" data-page="home">Home</button>
+        <button class="nav-btn" data-page="database">Database</button>
+        <button class="nav-btn" data-page="about">About</button>
+      </nav>
+
+      <!-- Invisible spacer to keep nav links centered -->
+      <div class="nav-spacer" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <!-- HOME PAGE -->
+  <main id="home" class="page active">
+    <section class="brand-banner">
+      <h1 class="brand-title">CASH ME IF YOU CAN</h1>
+      <p class="tagline">Keep every payment claim clean and accounted for.</p>
+    </section>
+
+    <div class="workspace">
+      <!-- Left Side: Input Fields -->
+      <section class="card input-panel">
+        <h2>Payment &amp; Order Details</h2>
+        <form id="claim-form" onsubmit="return false;">
+          <div class="field">
+            <label for="order-no">Order Number</label>
+            <input type="text" id="order-no" placeholder="e.g., ORD-001" />
+          </div>
+
+          <div class="field">
+            <label for="expected-amount">Expected Amount (PHP)</label>
+            <input type="text" id="expected-amount" placeholder="e.g., 250.00" />
+          </div>
+
+          <div class="field">
+            <label for="amount-paid">Amount Paid (PHP)</label>
+            <input type="text" id="amount-paid" placeholder="e.g., 250.00" />
+          </div>
+
+          <div class="field">
+            <label for="recipient-name">Recipient Name</label>
+            <input type="text" id="recipient-name" placeholder="e.g., Juan Dela Cruz" />
+          </div>
+
+          <div class="field">
+            <label for="account-no">GCash Account Number</label>
+            <input type="text" id="account-no" placeholder="09XXXXXXXXX" />
+          </div>
+
+          <div class="field">
+            <label for="ref-no">GCash Reference Number</label>
+            <input type="text" id="ref-no" placeholder="e.g., 1234 567 890123" />
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn-primary">VERIFY PAYMENT</button>
+            <button type="reset" class="btn-secondary">CLEAR</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Right Side: Toggle + Blank Diagram Space -->
+      <section class="card diagram-panel">
+        <div class="diagram-header">
+          <h2>DFA State Diagrams</h2>
+          <button id="toggle-diagram-btn" class="btn-toggle" type="button">
+            Toggle Visual: ON
+          </button>
+        </div>
+
+        <div id="diagram-space" class="diagram-blank">
+          <p>Visualization Space</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- DATABASE PAGE -->
+  <main id="database" class="page">
+    <section class="card">
+      <h2>Recorded Transactions</h2>
+      <p class="muted">Sample placeholder table for UI preview.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Order #</th>
+              <th>Reference #</th>
+              <th>Recipient</th>
+              <th>Expected</th>
+              <th>Paid</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ORD-001</td>
+              <td>1000234567890</td>
+              <td>Juan Dela Cruz</td>
+              <td>₱150.00</td>
+              <td>₱150.00</td>
+              <td><span class="badge clean">Verified</span></td>
+            </tr>
+            <tr>
+              <td>ORD-002</td>
+              <td>1000234567890</td>
+              <td>Juan Dela Cruz</td>
+              <td>₱200.00</td>
+              <td>₱200.00</td>
+              <td><span class="badge dupe">Duplicate</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- ABOUT PAGE -->
+  <main id="about" class="page">
+    <section class="card">
+      <h2>About the Project</h2>
+      <p>
+        <strong>Cash Me If You Can</strong> is a DFA-assisted payment verification prototype
+        for small merchants accepting GCash payments. It checks reference number format
+        and helps spot duplicate or mismatched entries before releasing orders.
+      </p>
+
+      <h3>How to Use</h3>
+      <ol class="tutorial-list">
+        <li>Go to the <strong>Home</strong> tab and fill in the order and GCash payment details.</li>
+        <li>Toggle the <strong>DFA State Diagram</strong> space on or off on the right as needed.</li>
+        <li>Click <strong>VERIFY PAYMENT</strong> to check the entry (backend logic coming next).</li>
+        <li>Open the <strong>Database</strong> tab to view recorded transactions.</li>
+      </ol>
+
+      <h3>Group Members</h3>
+      <p class="muted">BSCS 3-4, Group 9</p>
+      <p>Person A</p>
+      <p>Person B</p>
+      <p>Person C</p>
+      <p>Person D</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
